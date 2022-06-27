@@ -1,0 +1,59 @@
+[user]
+    name = Moshe Rubin
+    email = mosherubin137@gmail.com
+
+[alias]
+    # https://gist.github.com/MattSeen/7081307
+    alias = config --get-regexp '^alias.*'
+
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = lol --exclude=refs/stash --exclude=refs/remotes/origin/HEAD --all
+    lolaa = ! git log --graph --decorate $(git rev-list -g --all)
+    lg  =  log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lga = lg --exclude=refs/stash --all
+
+    s = status --show-stash
+    st = !git s && git stash list
+
+    a = add
+    aa = add --update
+    aaa = add --all
+    ap = add --patch
+
+    myrebase = rebase -i --rebase-merges
+    rb = rebase
+    rba = rebase --abort
+    rbc = rebase --continue
+
+    co = commit
+    com = commit --message
+
+    # branches = branch --all
+    branches = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(authordate:relative)) [%(authorname)]' --sort=refname:short #--sort=-committerdate
+
+    commitstoday = lg --since=\"5am\"
+
+[color]
+    ui = auto
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+
+[commit]
+    verbose = true
+
+[core]
+    autocrlf = true
+    longpaths = true
+    attributesFile = C:\\Users\\mrubin8\\.config\\git\\attributes
+
+[diff]
+    # wordRegex = "[^\\[:space:]]"
+
+[filter "strip-ipynb-output"]
+    # https://stackoverflow.com/a/58004619
+    clean = "jupyter nbconvert --ClearOutputPreprocessor.enabled=True --ClearMetadataPreprocessor.enabled=True --ClearMetadataPreprocessor.clear_notebook_metadata=False --to=notebook --stdin --stdout --log-level=ERROR"
+
+[merge]
+    ff = false  # Equivalent to --no-ff
