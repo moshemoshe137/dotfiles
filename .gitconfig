@@ -56,4 +56,9 @@
     clean = "jupyter nbconvert --ClearOutputPreprocessor.enabled=True --ClearMetadataPreprocessor.enabled=True --ClearMetadataPreprocessor.clear_notebook_metadata=False --to=notebook --stdin --stdout --log-level=ERROR"
 
 [merge]
+    # Create merge commits by default
     ff = false  # Equivalent to --no-ff
+
+[pull]
+    # Do NOT create merge commits when pulling by default
+    ff = true  # This setting overrides merge.ff when pulling.
