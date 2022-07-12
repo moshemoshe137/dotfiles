@@ -62,3 +62,5 @@
 [pull]
     # Do NOT create merge commits when pulling by default
     ff = true  # This setting overrides merge.ff when pulling.
+[mergetool "meld"]
+    path = C:\\Program Files (x86)\\Meld\\Meld.exe
