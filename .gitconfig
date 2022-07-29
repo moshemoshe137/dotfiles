@@ -50,6 +50,7 @@
     attributesFile = C:\\Users\\mrubin8\\.config\\git\\attributes
 
 [diff]
+    algorithm = histogram
     # wordRegex = "[^\\[:space:]]"
 
 [filter "strip-ipynb-output"]
