@@ -1,7 +1,2 @@
-
-#*.ipynb	diff=jupyternotebook
-
-#*.ipynb	merge=jupyternotebook
-
 # https://stackoverflow.com/a/58004619
 *.ipynb filter=strip-ipynb-output
