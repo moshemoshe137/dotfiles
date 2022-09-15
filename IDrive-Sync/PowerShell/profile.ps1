@@ -7,13 +7,9 @@ $env:PIP_REQUIRE_VIRTUALENV=$true
 ## Using py launcher, I could not care less about this path crap
 $env:PIP_NO_WARN_SCRIPT_LOCATION=$false  # gh: pypa/pip#6372
 
-
 # Aliases
 New-Alias e explorer.exe
 New-Alias g git
-Function l {& "${env:ProgramFiles}\Git\usr\bin\less.exe"}
-Set-Alias -Name "less" -Value "l"
-Function ls {ls -Force $args}
 
 # https://devblogs.microsoft.com/scripting/increase-powershell-command-history-to-the-max-almost/
 $MaximumHistoryCount=32767
