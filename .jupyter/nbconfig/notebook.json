@@ -1,0 +1,49 @@
+{
+  "load_extensions": {
+    "nbextensions_configurator/config_menu/main": true,
+    "code_prettify/autopep8": false,
+    "autoscroll/main": false,
+    "codefolding/main": false,
+    "collapsible_headings/main": true,
+    "execute_time/ExecuteTime": true,
+    "export_embedded/main": true,
+    "hide_input_all/main": true,
+    "highlight_selected_word/main": true,
+    "runtools/main": true,
+    "snippets_menu/main": true,
+    "spellchecker/main": true,
+    "toc2/main": true,
+    "toggle_all_line_numbers/main": true,
+    "scratchpad/main": true,
+    "autosavetime/main": false
+  },
+  "toc2": {
+    "collapse_to_match_collapsible_headings": false,
+    "skip_h1_title": true,
+    "threshold": "5",
+    "toc_cell": true
+  },
+  "collapsible_headings": {
+    "collapse_to_match_toc": true
+  },
+  "Cell": {
+    "cm_config": {
+      "lineNumbers": false
+    }
+  },
+  "scrollDownIsEnabled": true,
+  "bundlerextensions": {
+    "dataframe_image_bundler": {
+      "label": "DataFrame as Image (PDF or Markdown)",
+      "module_name": "dataframe_image._bundler",
+      "group": "download"
+    }
+  },
+  "autopep8": {
+    "register_hotkey": false
+  },
+  "init_delay": "30",
+  "ExecuteTime": {
+    "clear_timings_on_clear_output": true
+  }
+}
