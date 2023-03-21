@@ -2,6 +2,8 @@
     name = Moshe Rubin
     email = mosherubin137@gmail.com
 
+    signingkey = C:\\Users\\mrubin8\\.ssh\\id_ed25519.pub
+
 [alias]
     # https://gist.github.com/MattSeen/7081307
     alias = config --get-regexp '^alias.*'
@@ -43,6 +45,7 @@
 
 [commit]
     verbose = true
+    gpgsign = true
 
 [core]
     autocrlf = true
@@ -73,3 +76,12 @@
 
 [rebase]
     updateRefs = true
+
+[gpg]
+    format = ssh
+
+[tag]
+    gpgSign = true
+
+[gpg "ssh"]
+    allowedSignersFile = ~/.ssh/allowed_signers
