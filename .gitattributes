@@ -1,0 +1,2 @@
+# Ignore .sample files in .git-template/hooks
+*.sample linguist-vendored
