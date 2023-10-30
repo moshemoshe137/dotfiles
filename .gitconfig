@@ -31,6 +31,9 @@
     co = commit
     com = commit --message
 
+    d = diff
+    ds = diff --staged
+
     # branches = branch --all
     branches = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(authordate:relative)) [%(authorname)]' --sort=refname:short #--sort=-committerdate
 
