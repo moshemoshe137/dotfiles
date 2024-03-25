@@ -57,6 +57,7 @@
 
 [diff]
     algorithm = histogram
+    colorMoved = true
     # wordRegex = "[^\\[:space:]]"
 
 [filter "strip-ipynb-output"]
