@@ -17,7 +17,10 @@ function path{
 # https://devblogs.microsoft.com/scripting/increase-powershell-command-history-to-the-max-almost/
 $MaximumHistoryCount=32767
 # Enable predictive tab-completion
-Set-PSReadLineOption -PredictionSource History
+if (-not $PSCommandPath) {  # prevents errors: only load in interactive environment
+    Set-PSReadLineOption -PredictionSource History
+}
+
 
 # Import the posh-git module and set up my settings
 Import-Module posh-git;
@@ -27,3 +30,10 @@ $GitPromptSettings.EnableFileStatus = $false;
 $GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true;
 ## Abbreviate 'C:\Users\mrubin8\example.git' as 'example: '
 $GitPromptSettings.DefaultPromptAbbreviateGitDirectory = $true;
+
+#region conda initialize
+# !! Contents within this block are managed by 'conda init' !!
+If (Test-Path "C:\Anaconda3\Scripts\conda.exe") {
+    (& "C:\Anaconda3\Scripts\conda.exe" "shell.powershell" "hook") | Out-String | ?{$_} | Invoke-Expression
+}
+#endregion
