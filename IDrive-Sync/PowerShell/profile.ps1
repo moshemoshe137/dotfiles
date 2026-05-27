@@ -13,6 +13,24 @@ New-Alias g git
 function path{
     $env:path -split ";"
 }
+function which{
+    (Get-Command $args[0]).Source
+}
+# function history{
+#     param(
+#         [string] $Pattern,
+#         [int] $Limit=0
+#     )
+#     $path = (Get-PSReadLineOption).HistorySavePath
+#     $lines = Get-Content $path
+#     if ($Pattern) {
+#         $lines = $lines | Select-String -Pattern $Pattern
+#     }
+#     if ($Limit -gt 0) {
+#         $lines = $lines | Select-Object -Last $Limit
+#     }
+#     $lines
+# }
 
 # https://devblogs.microsoft.com/scripting/increase-powershell-command-history-to-the-max-almost/
 $MaximumHistoryCount=32767
@@ -30,6 +48,9 @@ $GitPromptSettings.EnableFileStatus = $false;
 $GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true;
 ## Abbreviate 'C:\Users\mrubin8\example.git' as 'example: '
 $GitPromptSettings.DefaultPromptAbbreviateGitDirectory = $true;
+
+# Enable gh CLI autocompletion
+Invoke-Expression -Command $(gh completion -s powershell | Out-String)
 
 #region conda initialize
 # !! Contents within this block are managed by 'conda init' !!
