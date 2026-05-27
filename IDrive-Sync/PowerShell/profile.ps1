@@ -49,8 +49,10 @@ $GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true;
 ## Abbreviate 'C:\Users\mrubin8\example.git' as 'example: '
 $GitPromptSettings.DefaultPromptAbbreviateGitDirectory = $true;
 
-# Enable gh CLI autocompletion
+# Enable CLI autocompletion
 Invoke-Expression -Command $(gh completion -s powershell | Out-String)
+Invoke-Expression -Command $(rg --generate=complete-powershell | Out-String)
+Invoke-Expression -Command $(fd --gen-completions powershell | Out-String)
 
 #region conda initialize
 # !! Contents within this block are managed by 'conda init' !!
