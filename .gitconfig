@@ -55,9 +55,12 @@
     longpaths = true
     attributesFile = C:\\Users\\mrubin8\\.config\\git\\attributes
 
+    editor = \"C:\\Users\\mrubin8\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+    pager = less -SI
 [diff]
     algorithm = histogram
     colorMoved = true
+    wsErrorHighlight = all
     # wordRegex = "[^\\[:space:]]"
 
 [filter "strip-ipynb-output"]
