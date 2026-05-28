@@ -53,6 +53,16 @@ $GitPromptSettings.DefaultPromptAbbreviateGitDirectory = $true;
 Invoke-Expression -Command $(gh completion -s powershell | Out-String)
 Invoke-Expression -Command $(rg --generate=complete-powershell | Out-String)
 Invoke-Expression -Command $(fd --gen-completions powershell | Out-String)
+# Source: https://learn.microsoft.com/en-us/windows/package-manager/winget/tab-completion
+Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
+    param($wordToComplete, $commandAst, $cursorPosition)
+        [Console]::InputEncoding = [Console]::OutputEncoding = $OutputEncoding = [System.Text.Utf8Encoding]::new()
+        $Local:word = $wordToComplete.Replace('"', '""')
+        $Local:ast = $commandAst.ToString().Replace('"', '""')
+        winget complete --word="$Local:word" --commandline "$Local:ast" --position $cursorPosition | ForEach-Object {
+            [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+        }
+}
 
 #region conda initialize
 # !! Contents within this block are managed by 'conda init' !!
