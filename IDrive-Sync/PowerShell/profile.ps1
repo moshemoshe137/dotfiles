@@ -40,14 +40,14 @@ if (-not $PSCommandPath) {  # prevents errors: only load in interactive environm
 }
 
 
-# Import the posh-git module and set up my settings
-Import-Module posh-git;
-## Not useful right now
-$GitPromptSettings.EnableFileStatus = $false;
-## Abbreviate 'C:\Users\mrubin8\' as '~'
-$GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true;
-## Abbreviate 'C:\Users\mrubin8\example.git' as 'example: '
-$GitPromptSettings.DefaultPromptAbbreviateGitDirectory = $true;
+# # Import the posh-git module and set up my settings
+# Import-Module posh-git;
+# ## Not useful right now
+# $GitPromptSettings.EnableFileStatus = $false;
+# ## Abbreviate 'C:\Users\mrubin8\' as '~'
+# $GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true;
+# ## Abbreviate 'C:\Users\mrubin8\example.git' as 'example: '
+# $GitPromptSettings.DefaultPromptAbbreviateGitDirectory = $true;
 
 # Enable CLI autocompletion
 Invoke-Expression -Command $(gh completion -s powershell | Out-String)
@@ -70,3 +70,5 @@ If (Test-Path "C:\Anaconda3\Scripts\conda.exe") {
     (& "C:\Anaconda3\Scripts\conda.exe" "shell.powershell" "hook") | Out-String | ?{$_} | Invoke-Expression
 }
 #endregion
+
+oh-my-posh init pwsh --config ~/Projects-Git/oh-my-posh-config/jandedobbeleer-edits.omp.json | Invoke-Expression
